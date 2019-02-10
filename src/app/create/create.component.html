@@ -1,0 +1,4 @@
+<div class="left">
+  <input type="text" placeholder="name" #name (keyUp.enter)="addWeather(name.value);name.value=''">
+  <button (click)="addWeather(name.value);name.value=''">Add a City</button>
+</div>

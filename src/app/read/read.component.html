@@ -1,0 +1,17 @@
+<div class="weather" *ngIf="weathers">
+
+  <h3>Weather</h3>
+  <table class="table"> 
+    <thead class="thead-dark" *ngFor="let weather of weathers | async let i=index">
+      <tr *ngIf="i<1">
+        <td></td>
+      <td *ngFor="let l of weather.data.list">{{ l.dt_txt.substring(10,13) }}:00</td>
+    </tr>
+    </thead>
+    <tr *ngFor="let weather of weathers | async">
+      <td>{{ weather.name }}</td>
+      <td *ngFor="let l of weather.data.list">{{ l.main.temp | number: '1.0-0' }} &deg;</td>
+    </tr>
+  </table>
+
+</div>
